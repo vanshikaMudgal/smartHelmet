@@ -1,0 +1,93 @@
+@import 'leaflet/dist/leaflet.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Clean Light Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Light GIS Leaflet Container */
+.leaflet-container {
+  background: #EBF0F5 !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  outline: none;
+}
+
+/* Clean Professional Leaflet Popup Styling */
+.leaflet-popup-content-wrapper {
+  background: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  padding: 0 !important;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+  line-height: 1.4 !important;
+}
+
+.leaflet-popup-tip {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05) !important;
+}
+
+.leaflet-tooltip {
+  background: #FFFFFF !important;
+  color: #1F2937 !important;
+  border: 1px solid #CBD5E1 !important;
+  border-radius: 6px !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+  font-family: 'Inter', system-ui, sans-serif !important;
+  padding: 4px 8px !important;
+  font-size: 11px !important;
+}
+
+/* Proximity line animation (subtle amber dashed line) */
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -20;
+  }
+}
+
+.proximity-line-animated {
+  animation: dash-flow 1s linear infinite;
+}
+
+/* Subtle Proximity Warning Ring (Traffic-light Amber) */
+@keyframes proximity-pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.3;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
+}
+
+.proximity-beacon-ring {
+  animation: proximity-pulse 2s infinite ease-out;
+  transform-origin: center;
+}
